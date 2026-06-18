@@ -1,0 +1,54 @@
+{
+  "name": "edutrack-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EduTrack AI — Multi-Tenant School Management SaaS",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "dev:backend": "turbo run dev --filter=backend",
+    "dev:web": "turbo run dev --filter=web",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "db:migrate": "npm run db:migrate --workspace=apps/backend",
+    "db:generate": "npm run db:generate --workspace=apps/backend",
+    "db:seed": "npm run db:seed --workspace=apps/backend",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:logs": "docker compose logs -f"
+  },
+  "packageManager": "npm@11.3.0",
+  "overrides": {
+    "recharts": {
+      "react": "18.3.1",
+      "react-dom": "18.3.1"
+    },
+    "react-redux": {
+      "react": "18.3.1",
+      "@types/react": "18.3.31"
+    },
+    "react-router-dom": {
+      "react": "18.3.1",
+      "react-dom": "18.3.1"
+    },
+    "@reduxjs/toolkit": {
+      "react": "18.3.1"
+    },
+    "react-hook-form": {
+      "react": "18.3.1"
+    },
+    "lucide-react": {
+      "react": "18.3.1"
+    }
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
